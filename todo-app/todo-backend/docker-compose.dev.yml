@@ -1,12 +1,6 @@
 version: '3.8'
 
 services:
-  app:
-    image: todo-backend
-    build: .
-    ports:
-      - 3000:3000
-
   mongo:
     image: mongo
     ports:
@@ -22,3 +16,5 @@ services:
 
 volumes:
   mongo_data:
+
+
