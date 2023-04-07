@@ -8,13 +8,13 @@ router.get('/', async (_, res) => {
   res.send(todos);
 });
 
-/* GET todo by id. */
+/* GET by id. */
 router.get('/:id', async (req, res) => {
   const todo = await Todo.find({_id: req.params.id})
   res.send(todo);
 });
 
-/* update todo by id. */
+/* update by id. */
 router.put('/:id', async (req, res) => {
   const todo = await Todo.updateOne(
     { "_id": req.params.id },
