@@ -3,5 +3,5 @@ const REDIS_URL = process.env.REDIS_URL || undefined
 
 module.exports = {
   MONGO_URL: 'mongodb://the_username:the_password@192.168.101.126:3456/the_database',
-  REDIS_URL: 'redis://192.168.101.126:6379'
+  REDIS_URL: 'redis://redis:6379'
 }
