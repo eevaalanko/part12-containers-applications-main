@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+require('dotenv').config()
 
 import App from './App';
 
