@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   app:
+    image: phonebook-frontend-prod
     build:
       context: ./frontend
       dockerfile: Dockerfile
@@ -13,7 +14,7 @@ services:
     tty: true
 
   backend:
-    image: phonebook-backend-dev
+    image: phonebook-backend-prod
     build:
       context: ./backend
       dockerfile: Dockerfile
