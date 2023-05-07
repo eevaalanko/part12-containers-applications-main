@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend/:/usr/src/app
+    ports:
+      - 3000:3000
+    container_name: phonebook-frontend-prod
+    tty: true
+
+  backend:
+    image: phonebook-backend-dev
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - ./backend/:/usr/src/app
+    ports:
+      - 3001:3001
+    container_name: phonebook-backend-prod
+

@@ -1,18 +1,12 @@
-FROM node:16 AS build-stage
+FROM node:16
 
 WORKDIR /usr/src/app
 
 COPY . .
 
-#ENV REACT_APP_BACKEND_URL=http://192.168.101.126:3000
-#ENV REACT_APP_BACKEND_URL=http://localhost:3000
-
 RUN npm ci
 
-RUN CI=true npm test .
+USER node
 
-RUN npm run build
+CMD [ "npm", "run", "start" ]
 
-FROM nginx:1.20-alpine
-
-COPY --from=build-stage /usr/src/app/build /usr/share/nginx/html

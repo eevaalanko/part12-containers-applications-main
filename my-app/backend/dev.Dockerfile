@@ -4,9 +4,9 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN npm install
+RUN npm ci
 
+USER node
 
-CMD [ "npm", "run", "start" ]
+CMD [ "npm", "run", "dev" ]
 
-#CMD json-server --watch /app/db.json --port 3001 --host 0.0.0.0

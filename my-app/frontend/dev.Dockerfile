@@ -8,8 +8,6 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 
 # install app dependencies
-COPY package.json ./
-COPY package-lock.json ./
 RUN npm install
 
 # add app
@@ -17,4 +15,4 @@ COPY . ./
 
 # start app
 CMD npm start
-#CMD npx json-server --watch /app/db.json --port 3001 --host 0.0.0.0
+
